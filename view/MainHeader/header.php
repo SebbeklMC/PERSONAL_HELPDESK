@@ -32,15 +32,13 @@
 
                 <div class="mobile-menu-right-overlay"></div>
 
-                <div class="dropdown dropdown-typical">
-                    <a href="#" class="dropdown-toggle no-arr">
-                        <span class="font-icon font-icon-home"></span>
-                    </a>
-                </div>
+                <input type="hidden" id="user_idx" value="<?php echo $_SESSION["usu_id"] ?>"><!-- ID del Usuario-->
+
 
                 <div class="dropdown dropdown-typical">
                     <a href="#" class="dropdown-toggle no-arr">
                         <span class="font-icon font-icon-user"></span>
+                        <span class="lblcontactactonomx"><?php echo $_SESSION["usu_nom"]?> <?php echo $_SESSION["usu_ape"]?> </span>
                     </a>
                 </div>
             </div>
