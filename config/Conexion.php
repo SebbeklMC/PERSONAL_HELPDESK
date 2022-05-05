@@ -1,27 +1,26 @@
 <?php
-session_start();
+    session_start();
 
-class Conectar
-{
-    protected $dbh;
+    class Conectar{
+          protected $dbh;
 
-    protected function Conexion()
-    {
+          protected function Conexion(){
         try {
-            $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=suggarfer_helpdesk", "root", "");
+            $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=helpdesk_beliveo", "root", "");
             return $conectar;
         } catch (Exception $e) {
-            print "¡Error BD!: " . $e->getmessage() . "<br/>";
+            print "¡Error BD!: " . $e->getMessage() . "<br/>";
             die();
         }
     }
-    public function set_names()
-    {
+
+    public function set_names(){
         return $this->dbh->query("SET NAMES 'utf8'");
     }
 
-    public function ruta()
-    {
+    public static function ruta(){
         return "http://localhost:80/PERSONAL_HELPDESK/";
     }
-}
+
+  }
+?>

@@ -25,7 +25,7 @@
                             <a class="dropdown-item" href="../Perfil/"><span class="font-icon glyphicon glyphicon-user"></span>perfil</a>
                             <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-question-sign"></span>ayuda</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../Logout/"><span class="font-icon glyphicon glyphicon-log-out"></span>Cerrar Sesion</a>
+                            <a class="dropdown-item" href="../Logout/logout.php"><span class="font-icon glyphicon glyphicon-log-out"></span>Cerrar Sesion</a>
                         </div>
                     </div>
                 </div>

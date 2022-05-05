@@ -1,7 +1,11 @@
+<?php
+  require_once("../../config/conexion.php");
+  if(isset ($_SESSION["usu_id"])){
+?>
 <!DOCTYPE html>
 <html>
-<?php require_once("../MainHead/head.php"); ?>
-<title>Beliveo</>::Home</title>
+     <?php require_once("../MainHead/head.php"); ?>
+     <title>Beliveo</>::Home</title>
 </head>
 
 <body class="with-side-menu">
@@ -17,7 +21,12 @@
             Blank page.
         </div>
     </div>
+
     <?php require_once("../MainJS/js.php"); ?>
 </body>
-
 </html>
+<?php
+  }else{
+   header("Location:".Conectar::ruta()."index.php");
+  }
+?>
