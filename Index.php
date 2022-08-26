@@ -13,58 +13,58 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Beliveo</>::Acceso</title>
+    <title>ServiceDesk</>::Acceso</title>
 
-    <link href="public/img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
-    <link href="public/img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
-    <link href="public/img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
-    <link href="public/img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
-    <link href="public/img/favicon.png" rel="icon" type="image/png">
-    <link href="public/img/favicon.ico" rel="shortcut icon">
+    <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+    <link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+    <link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+    <link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+    <link href="img/favicon.png" rel="icon" type="image/png">
+    <link href="img/favicon.ico" rel="shortcut icon">
 
-
+    <link rel="stylesheet" href="public/css/separate/pages/login.min.css">
     <link rel="stylesheet" href="public/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/main.css">
-    <link rel="stylesheet" href="public/css/separate/pages/login.min.css">
 </head>
 
 <body>
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
+
                 <form class="sign-box" action="" method="post" id="login_form">
+
+                    <input type="hidden" id="rol_id" name="rol_id" value="1">
+
                     <div class="sign-avatar">
-                        <img src="public/img/avatar-sign.png" alt="">
+                        <img src="public/1.jpg" alt="" id="imgtipo">
                     </div>
-                    <header class="sign-title">Acceso</header>
+                    <header class="sign-title" id="lbltitulo">Acceso Usuario</header>
+
                     <?php
                     if (isset($_GET["m"])) {
                         switch ($_GET["m"]) {
                             case "1";
                     ?>
-                                <div class="alert alert-danger" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" arial-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                                <div class="alert alert-warning alert-icon alert-close alert-dismissible fade in" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
                                     </button>
-                                    <div class="d-flex align-items-center justify-content-start">
-                                        <i class="icon ion-ios-checkmark alert-icon tx-32 mg-t-5 mg-xs-t-0"></i>
-                                        <span> El usuario y/o Contraseña son incorrectos.</span>
-                                    </div>
+                                    <i class="font-icon font-icon-warning"></i>
+                                    El Usuario y/o Contraseña son incorrectos.
                                 </div>
                             <?php
                                 break;
 
                             case "2";
                             ?>
-                                <div class="alert alert-danger" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" arial-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                                <div class="alert alert-warning alert-icon alert-close alert-dismissible fade in" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
                                     </button>
-                                    <div class="d-flex align-items-center justify-content-start">
-                                        <i class="icon ion-ios-checkmark alert-icon tx-32 mg-t-5 mg-xs-t-0"></i>
-                                        <span>Los Campos estan vacios.</span>
-                                    </div>
+                                    <i class="font-icon font-icon-warning"></i>
+                                    Los campos estan vacios.
                                 </div>
                     <?php
                                 break;
@@ -82,6 +82,9 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
                         <div class="float-right reset">
                             <a href="reset-password.html">Cambiar Contraseña</a>
                         </div>
+                        <div class="float-left reset">
+                            <a href="#" id="btnsoporte">Acceso Soporte</a>
+                        </div>
                     </div>
                     <input type="hidden" name="enviar" class="form-control" value="si">
                     <button type="submit" class="btn btn-rounded">Acceder</button>
@@ -89,6 +92,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
             </div>
         </div>
     </div>
+
     <script src="public/js/lib/jquery/jquery.min.js"></script>
     <script src="public/js/lib/tether/tether.min.js"></script>
     <script src="public/js/lib/bootstrap/bootstrap.min.js"></script>
@@ -113,6 +117,9 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
         });
     </script>
     <script src="public/js/app.js"></script>
+
+    <script type="text/javascript" src="index.js"></script>
+
 </body>
 
 </html>
