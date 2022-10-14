@@ -5,6 +5,7 @@ $(document).ready(function() {
 
 });
 
+/* TODO: Script para poder modificar segun el valor de acceso soporte o usuario */
 $(document).on("click", "#btnsoporte", function () {
     if ($('#rol_id').val()==1){
         $('#lbltitulo').html("Acceso Soporte");
