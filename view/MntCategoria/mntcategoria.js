@@ -2,7 +2,7 @@ var tabla;
 
 function init(){
     $("#usuario_form").on("submit",function(e){
-        guardaryeditar(e);	
+        guardaryeditar(e);
     });
 }
 
@@ -16,7 +16,7 @@ function guardaryeditar(e){
         data: formData,
         contentType: false,
         processData: false,
-        success: function(datos){    
+        success: function(datos){
             console.log(datos);
             $('#usuario_form')[0].reset();
             /* TODO:Ocultar Modal */
@@ -31,7 +31,7 @@ function guardaryeditar(e){
                 confirmButtonClass: "btn-success"
             });
         }
-    }); 
+    });
 }
 
 $(document).ready(function(){
@@ -43,7 +43,7 @@ $(document).ready(function(){
         "searching": true,
         lengthChange: false,
         colReorder: true,
-        buttons: [		          
+        buttons: [
                 'copyHtml5',
                 'excelHtml5',
                 'csvHtml5',
@@ -52,9 +52,9 @@ $(document).ready(function(){
         "ajax":{
             url: '../../controller/categoria.php?op=listar',
             type : "post",
-            dataType : "json",						
+            dataType : "json",
             error: function(e){
-                console.log(e.responseText);	
+                console.log(e.responseText);
             }
         },
         "bDestroy": true,
@@ -85,8 +85,8 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        }     
-    }).DataTable(); 
+        }
+    }).DataTable();
 });
 
 /* TODO: Mostrar informacion segun ID en los inputs */
@@ -98,7 +98,7 @@ function editar(cat_id){
         data = JSON.parse(data);
         $('#cat_id').val(data.cat_id);
         $('#cat_nom').val(data.cat_nom);
-    }); 
+    });
 
     /* TODO: Mostrar Modal */
     $('#modalmantenimiento').modal('show');
@@ -120,10 +120,10 @@ function eliminar(cat_id){
         if (isConfirm) {
             $.post("../../controller/categoria.php?op=eliminar", {cat_id : cat_id}, function (data) {
 
-            }); 
+            });
 
             /* TODO: Recargar Datatable JS */
-            $('#usuario_data').DataTable().ajax.reload();	
+            $('#usuario_data').DataTable().ajax.reload();
 
             /* TODO: Mensaje de Confirmacion */
             swal({

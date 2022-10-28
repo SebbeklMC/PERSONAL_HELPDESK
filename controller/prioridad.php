@@ -9,8 +9,8 @@
     switch($_GET["op"]){
         /* TODO: Guardar y editar, guardar si el campo prio_id esta vacio */
         case "guardaryeditar":
-            if(empty($_POST["prio_id"])){       
-                $prioridad->insert_prioridad($_POST["prio_nom"]);     
+            if(empty($_POST["prio_id"])){
+                $prioridad->insert_prioridad($_POST["prio_nom"]);
             }
             else {
                 $prioridad->update_prioridad($_POST["prio_id"],$_POST["prio_nom"]);
@@ -40,7 +40,7 @@
         case "eliminar":
             $prioridad->delete_prioridad($_POST["prio_id"]);
             break;
-        
+
         /* TODO: Mostrar en formato JSON segun prio_id */
         case "mostrar";
             $datos=$prioridad->get_prioridad_x_id($_POST["prio_id"]);

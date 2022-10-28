@@ -9,7 +9,7 @@
 
         /* TODO: Mostrar en formato JSON segun usu_id */
         case "mostrar";
-            $datos=$notificacion->get_notificacion_x_usu($_POST["usu_id"]);  
+            $datos=$notificacion->get_notificacion_x_usu($_POST["usu_id"]);
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
@@ -27,7 +27,7 @@
             $notificacion->update_notificacion_estado($_POST["not_id"]);
             break;
 
-        /* TODO: Listado de notificacion segun formato json para el datatable */    
+        /* TODO: Listado de notificacion segun formato json para el datatable */
         case "listar":
             $datos=$notificacion->get_notificacion_x_usu2($_POST["usu_id"]);
             $data= Array();

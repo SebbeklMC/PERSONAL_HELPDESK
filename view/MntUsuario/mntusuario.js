@@ -2,7 +2,7 @@ var tabla;
 
 function init(){
     $("#usuario_form").on("submit",function(e){
-        guardaryeditar(e);	
+        guardaryeditar(e);
     });
 }
 
@@ -16,7 +16,7 @@ function guardaryeditar(e){
         data: formData,
         contentType: false,
         processData: false,
-        success: function(datos){    
+        success: function(datos){
             console.log(datos);
             $('#usuario_form')[0].reset();
             /* TODO:Ocultar Modal */
@@ -31,7 +31,7 @@ function guardaryeditar(e){
                 confirmButtonClass: "btn-success"
             });
         }
-    }); 
+    });
 }
 
 $(document).ready(function(){
@@ -42,7 +42,7 @@ $(document).ready(function(){
         "searching": true,
         lengthChange: false,
         colReorder: true,
-        buttons: [		          
+        buttons: [
                 'copyHtml5',
                 'excelHtml5',
                 'csvHtml5',
@@ -51,9 +51,9 @@ $(document).ready(function(){
         "ajax":{
             url: '../../controller/usuario.php?op=listar',
             type : "post",
-            dataType : "json",						
+            dataType : "json",
             error: function(e){
-                console.log(e.responseText);	
+                console.log(e.responseText);
             }
         },
         "bDestroy": true,
@@ -84,8 +84,8 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        }     
-    }).DataTable(); 
+        }
+    }).DataTable();
 });
 
 /* TODO: Mostrar informacion segun ID en los inputs */
@@ -102,7 +102,7 @@ function editar(usu_id){
         $('#usu_pass').val(data.usu_pass);
         $('#rol_id').val(data.rol_id).trigger('change');
         $('#usu_telf').val(data.usu_telf);
-    }); 
+    });
 
     /* TODO: Mostrar Modal */
     $('#modalmantenimiento').modal('show');
@@ -124,9 +124,9 @@ function eliminar(usu_id){
         if (isConfirm) {
             $.post("../../controller/usuario.php?op=eliminar", {usu_id : usu_id}, function (data) {
 
-            }); 
+            });
 
-            $('#usuario_data').DataTable().ajax.reload();	
+            $('#usuario_data').DataTable().ajax.reload();
 
             swal({
                 title: "HelpDesk!",

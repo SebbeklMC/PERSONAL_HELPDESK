@@ -1,12 +1,12 @@
 <?php
-  require_once("../../config/conexion.php"); 
-  if(isset($_SESSION["usu_id"])){ 
+  require_once("../../config/conexion.php");
+  if(isset($_SESSION["usu_id"])){
 ?>
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-	<title>AnderCode</>::Home</title>
+	<title>ServiceDesk</>::Home</title>
 </head>
 <body class="with-side-menu">
 

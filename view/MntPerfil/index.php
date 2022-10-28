@@ -1,11 +1,11 @@
 <?php
-  require_once("../../config/conexion.php"); 
-  if(isset($_SESSION["usu_id"])){ 
+  require_once("../../config/conexion.php");
+  if(isset($_SESSION["usu_id"])){
 ?>
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<title>AnderCode</>::Perfil</title>
+	<title>ServiceDesk</>::Perfil</title>
 </head>
 <body class="with-side-menu">
 
@@ -61,7 +61,7 @@
 	<!-- Contenido -->
 
 	<?php require_once("../MainJs/js.php");?>
-	
+
 	<script type="text/javascript" src="mntperfil.js"></script>
 
 	<script type="text/javascript" src="../notificacion.js"></script>

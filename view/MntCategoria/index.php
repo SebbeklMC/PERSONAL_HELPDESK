@@ -1,18 +1,18 @@
 <?php
-  require_once("../../config/conexion.php"); 
-  if(isset($_SESSION["usu_id"])){ 
+  require_once("../../config/conexion.php");
+  if(isset($_SESSION["usu_id"])){
 ?>
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<title>AnderCode</>::Mantenimiento Categoria</title>
+	<title>ServiceDesk</>::Mantenimiento Categoria</title>
 </head>
 <body class="with-side-menu">
 
     <?php require_once("../MainHeader/header.php");?>
 
     <div class="mobile-menu-left-overlay"></div>
-    
+
     <?php require_once("../MainNav/nav.php");?>
 
 	<!-- Contenido -->

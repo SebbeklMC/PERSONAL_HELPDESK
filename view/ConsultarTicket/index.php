@@ -1,18 +1,18 @@
 <?php
-  require_once("../../config/conexion.php"); 
-  if(isset($_SESSION["usu_id"])){ 
+  require_once("../../config/conexion.php");
+  if(isset($_SESSION["usu_id"])){
 ?>
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<title>AnderCode</>::Consultar Ticket</title>
+	<title>ServiceDesk</>::Consultar Ticket</title>
 </head>
 <body class="with-side-menu">
 
     <?php require_once("../MainHeader/header.php");?>
 
     <div class="mobile-menu-left-overlay"></div>
-    
+
     <?php require_once("../MainNav/nav.php");?>
 
 	<!-- Contenido -->
@@ -34,7 +34,7 @@
 			</header>
 
 			<div class="box-typical box-typical-padding">
-				
+
 				<div class="row" id="viewuser">
 					<div class="col-lg-3">
 						<fieldset class="form-group">

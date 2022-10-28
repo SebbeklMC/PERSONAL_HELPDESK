@@ -54,8 +54,8 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        }     
-    }).DataTable(); 
+        }
+    }).DataTable();
 });
 
 /* TODO: Funcion para abrir detalle de ticket en una nueva ventana */
