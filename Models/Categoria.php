@@ -43,7 +43,7 @@
             parent::set_names();
             $sql="UPDATE tm_categoria SET
                 est = 0
-                WHERE 
+                WHERE
                 cat_id = ?";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $cat_id);

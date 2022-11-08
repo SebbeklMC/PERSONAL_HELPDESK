@@ -10,8 +10,8 @@ require_once("../Models/Ticket.php");
 class Email extends PHPMailer{
 
     //TODO: variable que contiene el correo del destinatario
-    protected $gCorreo = 'aqui tu correo@dominio.com';
-    protected $gContrasena = 'aqui tu pass';
+    protected $gCorreo = 'Luis.Calvario@alumno.udg.mx';
+    protected $gContrasena = 'Luiiz3129@';
     //TODO: variable que contiene la contraseña del destinatario
 
     /* TODO:Alertar al momento de generar un ticket */

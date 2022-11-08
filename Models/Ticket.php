@@ -25,7 +25,7 @@
         public function listar_ticket_x_usu($usu_id){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT 
+            $sql="SELECT
                 tm_ticket.tick_id,
                 tm_ticket.usu_id,
                 tm_ticket.cat_id,
@@ -41,7 +41,7 @@
                 tm_categoria.cat_nom,
                 tm_ticket.prio_id,
                 tm_prioridad.prio_nom
-                FROM 
+                FROM
                 tm_ticket
                 INNER join tm_categoria on tm_ticket.cat_id = tm_categoria.cat_id
                 INNER join tm_usuario on tm_ticket.usu_id = tm_usuario.usu_id
@@ -59,7 +59,7 @@
         public function listar_ticket_x_id($tick_id){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT 
+            $sql="SELECT
                 tm_ticket.tick_id,
                 tm_ticket.usu_id,
                 tm_ticket.cat_id,
@@ -80,7 +80,7 @@
                 tm_subcategoria.cats_nom,
                 tm_ticket.prio_id,
                 tm_prioridad.prio_nom
-                FROM 
+                FROM
                 tm_ticket
                 INNER join tm_categoria on tm_ticket.cat_id = tm_categoria.cat_id
                 INNER join tm_subcategoria on tm_ticket.cats_id = tm_subcategoria.cats_id
@@ -115,7 +115,7 @@
                 tm_categoria.cat_nom,
                 tm_ticket.prio_id,
                 tm_prioridad.prio_nom
-                FROM 
+                FROM
                 tm_ticket
                 INNER join tm_categoria on tm_ticket.cat_id = tm_categoria.cat_id
                 INNER join tm_usuario on tm_ticket.usu_id = tm_usuario.usu_id
@@ -139,10 +139,10 @@
                 tm_usuario.usu_nom,
                 tm_usuario.usu_ape,
                 tm_usuario.rol_id
-                FROM 
+                FROM
                 td_ticketdetalle
                 INNER join tm_usuario on td_ticketdetalle.usu_id = tm_usuario.usu_id
-                WHERE 
+                WHERE
                 tick_id =?";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $tick_id);
@@ -207,9 +207,9 @@
         public function insert_ticketdetalle_reabrir($tick_id,$usu_id){
             $conectar= parent::conexion();
             parent::set_names();
-                $sql="	INSERT INTO td_ticketdetalle 
-                    (tickd_id,tick_id,usu_id,tickd_descrip,fech_crea,est) 
-                    VALUES 
+                $sql="	INSERT INTO td_ticketdetalle
+                    (tickd_id,tick_id,usu_id,tickd_descrip,fech_crea,est)
+                    VALUES
                     (NULL,?,?,'Ticket Re-Abierto...',now(),'1');";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $tick_id);
@@ -222,8 +222,8 @@
         public function update_ticket($tick_id){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="update tm_ticket 
-                set	
+            $sql="update tm_ticket
+                set
                     tick_estado = 'Cerrado',
                     fech_cierre = now()
                 where
@@ -238,8 +238,8 @@
         public function reabrir_ticket($tick_id){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="update tm_ticket 
-                set	
+            $sql="update tm_ticket
+                set
                     tick_estado = 'Abierto'
                 where
                     tick_id = ?";
@@ -253,8 +253,8 @@
         public function update_ticket_asignacion($tick_id,$usu_asig){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="update tm_ticket 
-                set	
+            $sql="update tm_ticket
+                set
                     usu_asig = ?,
                     fech_asig = now()
                 where
@@ -302,19 +302,19 @@
             $sql=$conectar->prepare($sql);
             $sql->execute();
             return $resultado=$sql->fetchAll();
-        } 
+        }
 
         /* TODO:Total de ticket por categoria */
         public function get_ticket_grafico(){
             $conectar= parent::conexion();
             parent::set_names();
             $sql="SELECT tm_categoria.cat_nom as nom,COUNT(*) AS total
-                FROM   tm_ticket  JOIN  
-                    tm_categoria ON tm_ticket.cat_id = tm_categoria.cat_id  
-                WHERE    
+                FROM   tm_ticket  JOIN
+                    tm_categoria ON tm_ticket.cat_id = tm_categoria.cat_id
+                WHERE
                 tm_ticket.est = 1
-                GROUP BY 
-                tm_categoria.cat_nom 
+                GROUP BY
+                tm_categoria.cat_nom
                 ORDER BY total DESC";
             $sql=$conectar->prepare($sql);
             $sql->execute();
@@ -325,8 +325,8 @@
         public function insert_encuesta($tick_id,$tick_estre,$tick_comment){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="update tm_ticket 
-                set	
+            $sql="update tm_ticket
+                set
                     tick_estre = ?,
                     tick_coment = ?
                 where

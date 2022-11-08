@@ -293,7 +293,7 @@
                                                                 <tbody>
                                                                         <!-- TODO: Mostrar tantos documentos tenga el ticket detalle -->
                                                                         <?php
-                                                                            foreach ($datos_det as $row_det){ 
+                                                                            foreach ($datos_det as $row_det){
                                                                         ?>
                                                                             <tr>
                                                                                 <td><?php echo $row_det["det_nom"]; ?></td>
@@ -324,7 +324,7 @@
 
         /* TODO: Mostrar informacion de ticket en formato JSON para la vista */
         case "mostrar";
-            $datos=$ticket->listar_ticket_x_id($_POST["tick_id"]);  
+            $datos=$ticket->listar_ticket_x_id($_POST["tick_id"]);
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
@@ -395,7 +395,7 @@
 
         /* TODO: Total de ticket para vista de soporte */
         case "total";
-            $datos=$ticket->get_ticket_total();  
+            $datos=$ticket->get_ticket_total();
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
@@ -407,7 +407,7 @@
 
         /* TODO: Total de ticket Abierto para vista de soporte */
         case "totalabierto";
-            $datos=$ticket->get_ticket_totalabierto();  
+            $datos=$ticket->get_ticket_totalabierto();
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
@@ -419,7 +419,7 @@
 
         /* TODO: Total de ticket Cerrados para vista de soporte */
         case "totalcerrado";
-            $datos=$ticket->get_ticket_totalcerrado();  
+            $datos=$ticket->get_ticket_totalcerrado();
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
@@ -431,7 +431,7 @@
 
         /* TODO: Formato Json para grafico de soporte */
         case "grafico";
-            $datos=$ticket->get_ticket_grafico();  
+            $datos=$ticket->get_ticket_grafico();
             echo json_encode($datos);
             break;
 

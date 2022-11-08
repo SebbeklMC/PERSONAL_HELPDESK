@@ -10,7 +10,7 @@
         /* TODO: Guardar y editar, guardar si el campo cats_id esta vacio */
         case "guardaryeditar":
             if(empty($_POST["cats_id"])){
-                $subcategoria->insert_subcategoria($_POST["cat_id"],$_POST["cats_nom"]);     
+                $subcategoria->insert_subcategoria($_POST["cat_id"],$_POST["cats_nom"]);
             }else {
                 $subcategoria->update_subcategoria($_POST["cats_id"],$_POST["cat_id"],$_POST["cats_nom"]);
             }
@@ -41,7 +41,7 @@
             break;
         /* TODO: Mostrar en formato JSON segun prio_id */
         case "mostrar";
-            $datos=$subcategoria->get_subcategoria_x_id($_POST["cats_id"]);  
+            $datos=$subcategoria->get_subcategoria_x_id($_POST["cats_id"]);
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
