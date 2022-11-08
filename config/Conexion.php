@@ -28,7 +28,7 @@
             //TODO: Ruta Proyecto Local
 			//return "http://localhost:90/PERSONAL_HelpDesk/";
             //TODO: Ruta Proyecto Produccion
-            return "http://www.modularservidesk.com/PERSONAL_HelpDesk/";
+            return "http://www.modularservidesk.com/PERSONAL_HELPDESK/";
 		}
 
     }
