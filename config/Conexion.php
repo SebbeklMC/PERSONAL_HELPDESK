@@ -26,9 +26,9 @@
         /* TODO: Ruta o Link del proyecto */
         public static function ruta(){
             //TODO: Ruta Proyecto Local
-			//return "http://localhost:90/PERSONAL_HelpDesk/";
+			return "http://localhost:90/PERSONAL_HelpDesk/";
             //TODO: Ruta Proyecto Produccion
-            return "http://www.modularservidesk.com/";
+            //return "http://www.modularservidesk.com/";
 		}
 
     }
