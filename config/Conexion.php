@@ -32,6 +32,6 @@ class Conectar
         //TODO: Ruta Proyecto Local
         //return "http://localhost:90/PERSONAL_HelpDesk/";
         //TODO: Ruta Proyecto Produccion
-        return "https://137.184.246.214/PERSONAL_HELPDESK";
+        return "http://137.184.246.214/PERSONAL_HELPDESK";
     }
 }
