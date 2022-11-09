@@ -2,7 +2,7 @@
 /* TODO: Inicio de Sesion en la WebApp */
 //session_start();
 
-class Conectar
+class conectar
 {
     protected $dbh;
 
@@ -12,7 +12,7 @@ class Conectar
             //TODO: Cadena de Conexion Local
             //$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=fernando_helpdesk","root","");
             //TODO: Cadenad e Conexion Produccion
-            $conectar = $this->dbh = new PDO("mysql:host=ls-eb63f4de77556b4015d673d3269fd3adbf2783d5.c4do5q4y1jfp.us-east-2.rds.amazonaws.com;dbname=fernando_helpdesk", "dbmasteruser", "Fernando123");
+            $conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=fernando_helpdesk", "fcalvario", "009Bel!veo");
             return $conectar;
         } catch (Exception $e) {
             print "¡Error BD!: " . $e->getMessage() . "<br/>";
@@ -32,6 +32,6 @@ class Conectar
         //TODO: Ruta Proyecto Local
         //return "http://localhost:90/PERSONAL_HelpDesk/";
         //TODO: Ruta Proyecto Produccion
-        return "http://137.184.246.214/PERSONAL_HELPDESK";
+        return "http://cucienega.modularservidesk.com";
     }
 }
